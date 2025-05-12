@@ -111,21 +111,31 @@ public class Arvore23 {
     }
 
     public void desenhar(No23 no, int nivel) {
-    if (no == null) return;
+        if (no == null) return;
 
-    desenhar(no.direita, nivel + 1);
+        // Desenha primeiro o filho da direita
+        desenhar(no.direita, nivel + 1);
 
-    for (int i = 0; i < nivel; i++) System.out.print("   ");
+    // Indentação para o nível atual
+        for (int i = 0; i < nivel; i++) {
+            System.out.print("       "); // 7 espaços para espaçamento visual
+        }
 
-    if (no.chave1 != -1 && no.duasChaves && no.chave2 != -1) {
-        System.out.println("[" + no.chave1 + " | " + no.chave2 + "]");
-    } else if (no.chave1 != -1) {
-        System.out.println("[" + no.chave1 + "]");
-    } else if (no.duasChaves && no.chave2 != -1) {
-        System.out.println("[" + no.chave2 + "]");
+    // Impressão do nó com base nas chaves
+        if (no.chave1 != -1 && no.duasChaves && no.chave2 != -1) {
+            System.out.println("[" + no.chave1 + " | " + no.chave2 + "]");
+        } else if (no.chave1 != -1) {
+            System.out.println("[" + no.chave1 + "]");
+        } else if (no.duasChaves && no.chave2 != -1) {
+            System.out.println("[" + no.chave2 + "]");
+        } else {
+            System.out.println("[ ]");
+        }
+
+    // Desenha o filho do centro
+        desenhar(no.centro, nivel + 1);
+
+    // Desenha o filho da esquerda
+        desenhar(no.esquerda, nivel + 1);
     }
-
-    desenhar(no.centro, nivel + 1);
-    desenhar(no.esquerda, nivel + 1);
-}
 }
