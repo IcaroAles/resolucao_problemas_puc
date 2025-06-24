@@ -1,0 +1,10 @@
+Dataset,Algoritmo,Tempo(ns),Trocas,Iteracoes
+Dataset 1,MergeSort,383800,203,201
+Dataset 1,RadixSort,409300,150,150
+Dataset 1,QuickSort,423000,425,463
+Dataset 2,MergeSort,20600,290,138
+Dataset 2,RadixSort,11100,150,150
+Dataset 2,QuickSort,34600,625,1177
+Dataset 3,MergeSort,68300,296,133
+Dataset 3,RadixSort,25900,100,100
+Dataset 3,QuickSort,48200,649,1225
