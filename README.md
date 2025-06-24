@@ -63,7 +63,6 @@ Todos os testes são realizados com os mesmos dados (graças à `seed` fixa) par
 
 ## Resultados e Gráficos
 
-### 📊 `analise_desempenho.png`
 
 O gráfico gerado apresenta:
 
@@ -74,7 +73,7 @@ O gráfico gerado apresenta:
 
 Para cada combinação de tamanho de tabela, tamanho do conjunto e função hash.
 
-### 📄 `relatorio_texto.txt`
+### `relatorio_texto.txt`
 
 Este relatório mostra as médias por função hash em todos os testes. Ideal para embasar a conclusão e comparar o desempenho global de cada abordagem.
 
