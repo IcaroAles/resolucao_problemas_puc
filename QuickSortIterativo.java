@@ -7,9 +7,11 @@ public class QuickSortIterativo {
         trocas = 0;
         iteracoes = 0;
 
+        //pilha para armazenar os indices do vetor
         int[] pilha = new int[100];
         int topo = -1;
 
+        //empilha os indicis inicial e final do vetor
         topo++;
         pilha[topo] = 0;
         topo++;
@@ -21,11 +23,13 @@ public class QuickSortIterativo {
 
             int pivo = particionar(vetor, inicio, fim);
 
+            //a esquerda do pivo
             if (pivo - 1 > inicio) {
                 pilha[++topo] = inicio;
                 pilha[++topo] = pivo - 1;
             }
 
+            //direita do pivo
             if (pivo + 1 < fim) {
                 pilha[++topo] = pivo + 1;
                 pilha[++topo] = fim;
@@ -36,10 +40,12 @@ public class QuickSortIterativo {
     private static int particionar(int[] vetor, int inicio, int fim) {
         int pivo = vetor[fim];
         int i = inicio - 1;
-
         int j = inicio;
+
         while (j <= fim - 1) {
             iteracoes++;
+
+            //se o valor atual é menor que pivo, trocam de posição
             if (vetor[j] <= pivo) {
                 i++;
                 int temp = vetor[i];
@@ -50,6 +56,7 @@ public class QuickSortIterativo {
             j++;
         }
 
+        //arruma posição do pivo, esquerda menores e direita maiores
         int temp = vetor[i + 1];
         vetor[i + 1] = vetor[fim];
         vetor[fim] = temp;

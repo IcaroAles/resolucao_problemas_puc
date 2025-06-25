@@ -12,11 +12,16 @@ public class MergeSortIterativo {
         while (largura < tamanho) {
             int esquerda = 0;
 
+            //percorre o vetor de largura em largura
             while (esquerda < tamanho) {
+                //define os limites esquerda meio e direita
                 int meio = esquerda + largura - 1;
                 int direita = esquerda + 2 * largura - 1;
 
+                //se meior passar do vetor nao tem o que mesclar
                 if (meio >= tamanho) break;
+
+                //corrige limite direito se passar do vetor
                 if (direita >= tamanho) direita = tamanho - 1;
 
                 mesclar(vetor, esquerda, meio, direita);
@@ -31,15 +36,18 @@ public class MergeSortIterativo {
         int tamanho1 = meio - esquerda + 1;
         int tamanho2 = direita - meio;
 
+        //vetores auxilixares para guardar os blocos
         int[] esq = new int[100];
         int[] dir = new int[100];
 
+        //copiar elementos da esquerda
         int i = 0;
         while (i < tamanho1) {
             esq[i] = vetor[esquerda + i];
             i = i + 1;
         }
 
+        //copia elementos da direita
         int j = 0;
         while (j < tamanho2) {
             dir[j] = vetor[meio + 1 + j];
@@ -50,6 +58,7 @@ public class MergeSortIterativo {
         j = 0;
         int k = esquerda;
 
+        //compara e junta os elementos em ordem
         while (i < tamanho1 && j < tamanho2) {
             iteracoes++;
             if (esq[i] <= dir[j]) {
@@ -63,6 +72,7 @@ public class MergeSortIterativo {
             k = k + 1;
         }
 
+        //se ainda houver elementos na esquerda copia para o vetor
         while (i < tamanho1) {
             vetor[k] = esq[i];
             i = i + 1;
@@ -70,6 +80,7 @@ public class MergeSortIterativo {
             trocas++;
         }
 
+        //se ainda houver elementos na direita copia para o vetor
         while (j < tamanho2) {
             vetor[k] = dir[j];
             j = j + 1;

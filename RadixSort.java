@@ -1,7 +1,7 @@
 public class RadixSort {
 
-    public static int trocas = 0;
-    public static int iteracoes = 0;
+    public static int trocas = 0; // Contador de trocas
+    public static int iteracoes = 0; // Contador de iterações
 
     public static void radixSort(int[] vetor, int tamanho) {
         trocas = 0;
@@ -17,15 +17,15 @@ public class RadixSort {
     }
 
     private static void countingSort(int[] vetor, int tamanho, int exp) {
-        int[] output = new int[100];
-        int[] count = new int[10];
+        int[] output = new int[100]; // vetor guarda ordenacao atual
+        int[] count = new int[10];  // vetor temporario para contar quantas vezes cada digito aparece
 
         int i = 0;
         while (i < 10) {
             count[i] = 0;
             i++;
         }
-
+// conta quantas vezes cada digito aparece na casa decimal atual
         i = 0;
         while (i < tamanho) {
             int digito = (vetor[i] / exp) % 10;
@@ -33,13 +33,13 @@ public class RadixSort {
             iteracoes++;
             i++;
         }
-
+// transforma a contagem em posição do vetor
         i = 1;
         while (i < 10) {
             count[i] += count[i - 1];
             i++;
         }
-
+//constroi o vetor de saida
         i = tamanho - 1;
         while (i >= 0) {
             int digito = (vetor[i] / exp) % 10;

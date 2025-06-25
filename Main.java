@@ -13,15 +13,13 @@ public class Main {
         for (int d = 0; d < 3; d++) {
             int[] original = datasets[d];
 
-            // MergeSort
             int[] v1 = new int[50];
-            for (int i = 0; i < 50; i++) v1[i] = original[i];
+            for (int i = 0; i < 50; i++) v1[i] = original[i];//copia valores do dataset para o vetorv1
             long t1 = System.nanoTime();
             MergeSortIterativo.mergeSort(v1, 50);
             long t2 = System.nanoTime();
             System.out.println(nomes[d] + ",MergeSort," + (t2 - t1) + "," + MergeSortIterativo.trocas + "," + MergeSortIterativo.iteracoes);
 
-            // RadixSort
             int[] v2 = new int[50];
             for (int i = 0; i < 50; i++) v2[i] = original[i];
             long t3 = System.nanoTime();
@@ -29,7 +27,6 @@ public class Main {
             long t4 = System.nanoTime();
             System.out.println(nomes[d] + ",RadixSort," + (t4 - t3) + "," + RadixSort.trocas + "," + RadixSort.iteracoes);
 
-            // QuickSort
             int[] v3 = new int[50];
             for (int i = 0; i < 50; i++) v3[i] = original[i];
             long t5 = System.nanoTime();
