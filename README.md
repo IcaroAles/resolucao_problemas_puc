@@ -19,7 +19,6 @@ Cada algoritmo foi testado em 3 datasets diferentes. Para cada combinação, for
 - O número de trocas realizadas
 - O número de iterações 
 
-Os dados foram exportados automaticamente para o arquivo `resultado.csv`.
 
 ---
 
@@ -64,7 +63,6 @@ Considerando os três critérios:
 
 ##  Conclusão Final
 
-Cada algoritmo tem suas forças:
 
 - MergeSort é eficiente, com bom tempo de execução.
 - RadixSort é eficas em trocas e iterações, sendo o mais estável em datasets com números inteiros.
